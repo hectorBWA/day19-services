@@ -10,11 +10,11 @@ export class AppComponent implements OnInit {
 
   accounts: {name: string, status: string}[] = [];
 
-  constructor(private accountService: AccountsService){};
+  constructor(private accountsService: AccountsService){};
 
 
   ngOnInit() {
-    this.accounts = this.accountService.accounts;
+    this.accounts = this.accountsService.accounts;
   }
   
 

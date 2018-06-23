@@ -15,10 +15,12 @@ export class AccountComponent {
   // @Output() statusChanged = new EventEmitter<{id: number, newStatus: string}>();
 
   constructor(/*private loggingService: LoggingService,*/
-    private accountService: AccountsService){};
+    private accountsService: AccountsService){};
 
   onSetTo(status: string) {
-    this.accountService.updateStatus(this.id, status);
+    this.accountsService.updateStatus(this.id, status);
     // this.loggingService.logStatusChange(status);
+
+    this.accountsService.statusUpdated.emit(status);
   }
 }
